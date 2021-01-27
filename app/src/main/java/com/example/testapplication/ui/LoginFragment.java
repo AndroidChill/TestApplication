@@ -41,15 +41,27 @@ public class LoginFragment extends Fragment {
 
         viewModel = new ViewModelProvider(getViewModelStore(), new SignInFactory()).get(SignInViewModel.class);
 
+        //пихаем в xml viewmodel
+        binding.setViewModel(viewModel);
+
         binding.done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 viewModel.getCoinsList(initSignInRequest()).observe(getViewLifecycleOwner(), new Observer<SignInBody>() {
                     @Override
                     public void onChanged(SignInBody signInBody) {
 
+                        Toast.makeText(getContext(), "dsf", Toast.LENGTH_SHORT).show();
+
+                        Toast.makeText(getContext(), signInBody.toString(), Toast.LENGTH_SHORT).show();
+
                         if(signInBody.getToken() != null){
                             Toast.makeText(getContext(), signInBody.getToken(), Toast.LENGTH_SHORT).show();
+                        } else {
+                            if(signInBody.getFirstError() != null){
+                                Toast.makeText(getContext(), signInBody.getFirstError().getEmail(), Toast.LENGTH_SHORT).show();
+                            }
                         }
 
                     }

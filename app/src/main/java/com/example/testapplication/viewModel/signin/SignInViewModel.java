@@ -2,6 +2,7 @@ package com.example.testapplication.viewModel.signin;
 
 import android.content.Context;
 
+import androidx.databinding.ObservableInt;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -18,6 +19,19 @@ public class SignInViewModel extends ViewModel {
 
     public MutableLiveData<SignInBody> getCoinsList(SignInRequest request){
         return repository.signIn(request);
+    }
+
+
+    public ObservableInt getError() {
+        return repository.getError();
+    }
+
+    public ObservableInt getLoading() {
+        return repository.getLoading();
+    }
+
+    public ObservableInt getShowContent() {
+        return repository.getShowContent();
     }
 
 }

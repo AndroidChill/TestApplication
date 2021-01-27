@@ -17,6 +17,7 @@ public class ServerFactory<T> {
     private Retrofit retrofit;
 
     private ServerFactory() {
+        //конфиг ретрофита
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder()
@@ -38,6 +39,7 @@ public class ServerFactory<T> {
         return mInstance;
     }
 
+    //регаем интерфейс запроса
     public AuthService getAuthService(){
         return retrofit.create(AuthService.class);
     }

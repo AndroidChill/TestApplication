@@ -1,9 +1,8 @@
-package com.example.testapplication.network.request;
+package com.example.testapplication.model.singin;
 
 import com.google.gson.annotations.SerializedName;
 
-//то что мы отправляем на сервак
-public class SignInRequest {
+public class FirstError {
 
     @SerializedName("email")
     private String email;
@@ -11,7 +10,7 @@ public class SignInRequest {
     @SerializedName("password")
     private String password;
 
-    public SignInRequest(String email, String password) {
+    public FirstError(String email, String password) {
         this.email = email;
         this.password = password;
     }

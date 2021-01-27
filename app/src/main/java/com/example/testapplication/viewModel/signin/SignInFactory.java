@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+//фабрика для создания viewmodel
 public class SignInFactory implements ViewModelProvider.Factory{
 
     @NonNull
@@ -14,11 +15,4 @@ public class SignInFactory implements ViewModelProvider.Factory{
 }
 
 
-//public class CoinsFactory implements ViewModelProvider.Factory {
-//    @NonNull
-//    @Override
-//    public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-//        return (T) new CoinsViewModel();
-//    }
-//}
 
